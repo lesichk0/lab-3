@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width">
+   </head>
+   <body>
+      <p id = "elem">Вміст блока.</p>
+      <button onclick="str_del()">ВИДАЛИТИ</button>
+      <button onclick="deleteLastChar()">ВИДАЛИТИ ОСТАНІЙ СИМВОЛ</button>
+      <script>
+        function str_del(){
+        Selection = window.getSelection().toString();
+        //console.log(Selection);
+        var str = document.getElementById("elem").textContent;
+        var start = str.indexOf(Selection);
+        var end = start + Selection.length;
+        var result = str.slice(0,start).textContent = result;
+        //console.log(result);
+        document.getElementById("elem").textContent = result;
+        }
+
+        function deleteLastChar() {
+        var elem = document.getElementById("elem");
+        var str = elem.textContent;
+        var result = str.slice(0, -1);
+        elem.textContent = result;
+        } 
+        //5.2.1
+        function getProperty(obj, key) {
+        return obj[key];
+        }
+
+        var obj = {
+        key: "value"
+        };
+        var output = getProperty(obj, "key");
+        console.log(output); //value
+
+        //5.2.2
+        function addProperty(obj, propertyName) {
+        obj[propertyName] = true;
+        return obj[propertyName];
+        }
+
+        var myObj = {};
+        addProperty(myObj, "myProperty");
+        console.log(myObj.myProperty); // true
+
+        //5.2.3
+        function removeProperty(obj, propertyName) {
+        if (obj.hasOwnProperty(propertyName)) {
+            delete obj[propertyName];
+        }
+        }
+
+        var obj = {
+        name: 'Sam',
+        age: 20
+        };
+
+        removeProperty(obj, 'name');
+        console.log(obj.name); // Виведе: undefined
+
+        //5.2.4
+        function getFullName(firstName, lastName) {
+        return firstName + ' ' + lastName;
+        }
+
+        var output = getFullName('Joe', 'Smith');
+        console.log(output); // Виведе: Joe Smith
+
+        //5.2.5
+        function getLengthOfWord(word) {
+        return word.length;
+        }
+
+        var output = getLengthOfWord('some');
+        console.log(output); // Виведе: 4
+
+        //5.2.6
+        function getLengthOfTwoWords(word1, word2){
+        return word1.length + word2.length;
+        }
+        var output = getLengthOfTwoWords('some', 'words');
+        console.log(output); //9
+
+        //5.2.7
+        function isGreaterThan(number1, number2){
+        return number1 < number2;
+        }
+        var output = isGreaterThan(11, 10);
+        console.log(output); //false
+
+        //5.2.8
+        function isEven(number) {
+        return number % 2 == 0;
+        }
+        var output = isEven(11);
+        console.log(output); // false
+
+        //5.2.9
+        function isSameLength (word1, word2){
+        return word1.length == word2.length;
+        }
+        var output = isSameLength('words', 'super');
+        console.log(output); //true
+
+        //5.2.10
+        function isEvenAndGreaterThanTen(number){
+        return number % 2 == 0 && number > 10;
+        }
+        var output = isEvenAndGreaterThanTen(13);
+        console.log(output);//false
+
+        //5.2.11
+        function computeAreaOfATriangle(base, height) {
+        return 0.5 * base * height;
+        }
+        var output = computeAreaOfATriangle(4, 6);
+        console.log(output);//12
+      </script>
+   </body>
+</html>

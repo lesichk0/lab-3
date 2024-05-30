@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        
+    </style>
+    <title>Calculator</title>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <label for="number1">Enter the first number:</label>
+    <input type="number" id="number1" style="margin-bottom: 10px;"><br>
+
+    <label for="number2">Enter the second number:</label>
+    <input type="number" id="number2" style="margin-bottom: 10px;"><br>
+
+    <button onclick="calculateSum()">Calculate the amount</button>
+
+    <div id="result"></div>
+</body>
+<script>
+    // Використання var
+    var resultElement = document.getElementById("result");
+    function calculateSum(){
+        // Використання const, let
+        const num1 = parseInt(document.getElementById("number1").value);
+        const num2 = parseInt(document.getElementById("number2").value);
+        
+        let sum = num1 + num2;
+        // Використання alert () - виведення в модальному вікні 
+        alert("Sum of numbers: " + sum);
+        // Використання console.log() - виведення у консоль
+        console.log("Sum of numbers: ", sum);
+        // Використання innerHTML
+        resultElement.innerHTML = "Sum of numbers: " + sum;
+        // Використання document.write() - перезапис сторінки 
+        document.write("Sum of numbers: " + sum);
+    }
+</script>
+</html>
